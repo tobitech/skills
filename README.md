@@ -4,7 +4,9 @@ Reusable Codex skills maintained by [Tobitech](https://github.com/tobitech).
 
 ## Available skills
 
-### Reference-First UI Design
+### Design
+
+#### Reference-First UI Design
 
 Design, implement, and critically review polished product interfaces across iOS, macOS, and web. The skill grounds visual decisions in project-specific language, approved internal patterns, platform conventions, and mature production references.
 
@@ -17,20 +19,20 @@ It includes:
 - failure-seeking self-critique and autonomous polish passes;
 - non-blocking design-gap detection and closure.
 
-[Browse the skill](./skills/design-reference-first-ui/)
+[Browse the skill](./skills/design/design-reference-first-ui/)
 
 ## Install
 
 Ask Codex:
 
-> Install the `design-reference-first-ui` skill from `https://github.com/tobitech/skills/tree/main/skills/design-reference-first-ui`.
+> Install the `design-reference-first-ui` skill from `https://github.com/tobitech/skills/tree/main/skills/design/design-reference-first-ui`.
 
 Or install it manually:
 
 ```bash
 git clone https://github.com/tobitech/skills.git
 mkdir -p ~/.codex/skills
-cp -R skills/design-reference-first-ui ~/.codex/skills/
+cp -R skills/design/design-reference-first-ui ~/.codex/skills/
 ```
 
 ## Use
