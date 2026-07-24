@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference-First UI Design"
+  short_description: "Bootstrap, design, and critically review polished UI"
+  default_prompt: "Use $design-reference-first-ui to bootstrap or extend this project's visual foundation, implement the interface, and critically review it in application context."
