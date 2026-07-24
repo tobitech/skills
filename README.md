@@ -17,13 +17,13 @@ It includes:
 - failure-seeking self-critique and autonomous polish passes;
 - non-blocking design-gap detection and closure.
 
-[Browse the skill](./design-reference-first-ui/)
+[Browse the skill](./skills/design-reference-first-ui/)
 
 ## Install
 
 Ask Codex:
 
-> Install the `design-reference-first-ui` skill from `https://github.com/tobitech/skills/tree/main/design-reference-first-ui`.
+> Install the `design-reference-first-ui` skill from `https://github.com/tobitech/skills/tree/main/skills/design-reference-first-ui`.
 
 Or install it manually:
 

@@ -2,10 +2,12 @@
 
 ## Structure
 
-- Keep each reusable skill in its own top-level directory.
+- Keep published reusable skills under `skills/<skill-name>/`.
+- Keep each skill self-contained within its own directory.
 - Keep project-specific design decisions and screenshots out of reusable skills.
 - Do not add auxiliary files such as `README.md` or changelogs inside a skill directory.
 - Use the repository-level `README.md` for human-facing discovery and installation guidance.
+- Add category directories under `skills/` only when the collection is large enough for them to improve discovery.
 
 ## Updating a skill
 
