@@ -19,6 +19,8 @@ Use the strongest available mechanism:
 
 Capture the component in isolation and inside its actual parent screen. Include enough surrounding UI and background to judge hierarchy, boundary, elevation, alignment, and product continuity.
 
+When repeated anatomy spans separate cards or sections, keep a same-scale integrated capture that shows those instances together. Crops may support detailed inspection, but do not compare crops that were independently resized.
+
 Render the primary state plus the states most likely to expose layout weakness. Consider:
 
 - light and dark appearance;
@@ -74,6 +76,8 @@ Verify both directions: the candidate should benefit from mature external patter
 - Does proximity match semantic relationship?
 - Are repeated rows and sibling cards aligned consistently?
 - Can their container, icon, copy, baseline, and trailing-control anchors be named and traced?
+- Was a sibling-anchor matrix completed against the actual render, including repeated anatomy in separate cards or sections?
+- Do matching controls share right edges, column starts, sizes, and internal padding unless a named variant explains the difference?
 - Is vertical rhythm neither cramped nor wasteful?
 - Are surfaces used for meaningful containment rather than decoration?
 - Does each repeated anatomy use one explicit grid or shared layout contract rather than unrelated spacer chains?
@@ -108,8 +112,9 @@ Use [self-critique-protocol.md](self-critique-protocol.md). Treat the first comp
 
 1. Run a structural and subtraction pass that fixes content organization, grouping, disclosure, action placement, and unnecessary containment.
 2. Run a visual pass that fixes hierarchy, text emphasis, spacing, alignment, icon integration, surface treatment, environmental fit, and states.
-3. Re-render the integrated context and compare it with the project language and extracted reference patterns.
-4. Repeat when a material reference-backed improvement remains.
+3. Complete the sibling-geometry audit with zoomed same-scale evidence, guides, layout geometry, or screenshot coordinates. Fix unexplained drift at its shared geometry owner.
+4. Re-render the integrated context and repeat the same sibling comparison alongside the project language and extracted reference patterns.
+5. Repeat when a material reference-backed improvement remains.
 
 Do not manufacture endless churn. Stop when no blocker or major issue remains and the next change would be minor, subjective, or outside scope.
 

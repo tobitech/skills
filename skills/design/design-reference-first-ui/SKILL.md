@@ -153,7 +153,9 @@ Perform a private failure-seeking critique of the first render. Judge the compon
 
 Compare the result with the selected internal and production reference set. Compare relationships—not merely token names or individual measurements—including flow continuity, data presentation, scan order, text-emphasis contrast, proximity, baseline and edge alignment, proportions, boundary count, surface nesting, icon integration, state behavior, and environmental contrast.
 
-Review the candidate at reduced scale and, when tooling permits, in grayscale. Trace the declared alignment anchors and run a subtraction pass that challenges every border, fill, icon tile, badge, label, and persistent action.
+Review the candidate at reduced scale and, when tooling permits, in grayscale. Run a mandatory sibling-geometry audit before relying on general visual judgment. For every repeated component family visible in the integrated render—including instances separated into different cards or sections—record the expected container, icon, copy, baseline, and trailing-control anchors; compare at least the first, middle, and last or all instances when the set is small; and verify the actual edges with zoomed crops, guides, geometry inspection, or screenshot coordinates. A declared grid is not evidence that the render follows it. Treat any unexplained delta larger than rendering antialiasing as a blocker, fix the shared geometry owner, and repeat the same comparison on the confirmation render.
+
+Trace the remaining declared alignment anchors and run a subtraction pass that challenges every border, fill, icon tile, badge, label, and persistent action.
 
 Run a project-fit pass after the external comparison. Verify that borrowed patterns were translated through the project's approved foundations and components, that the screen fits neighboring and unrelated product areas, and that no product-specific signature, fashionable treatment, or known source flaw was imported without justification.
 
@@ -164,6 +166,8 @@ For a new or materially redesigned interface, run a convergence loop with at lea
 3. a confirmation render in the integrated context.
 
 Continue iterating whenever a reference-backed change would materially improve clarity, restraint, cohesion, or platform fit. Stop when no blocker or major issue remains and the next change would be minor, subjective, or outside scope. A small, tightly scoped visual edit may use one critique-and-confirmation cycle.
+
+For visually consequential, novel, or high-exposure work, use an independent read-only visual reviewer when one is available after the implementing agent completes its own deterministic and failure-seeking checks. A second model may expose taste, hierarchy, or pattern-transfer issues, but it is not a substitute for measurable alignment, sizing, overflow, contrast, or state verification.
 
 Do not claim visual verification from a successful build alone. If rendering is blocked, report the exact limitation and complete all other safe checks.
 

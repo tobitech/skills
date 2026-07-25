@@ -159,7 +159,7 @@ Use the same declared columns across siblings. Do not place a control at an arbi
 
 Prefer a real layout primitive—SwiftUI `Grid`, CSS Grid, a shared row component, or equivalent—when repeated columns must align. A chain of spacers and local frames is not a grid contract.
 
-On the integrated render, trace imaginary vertical lines through copy starts and trailing edges. Check the first, middle, and last item, multiline content, absent accessories, and narrow/wide widths.
+On the integrated render, trace or measure vertical lines through copy starts and trailing edges. Compare repeated anatomy across separate cards and sections as well as inside one container. Check the first, middle, and last item, shortest and longest content, multiline content, absent accessories, and narrow/wide widths. Use same-scale crops, temporary guides, layout geometry, or screenshot coordinates when available; a declared component or grid is not proof that modifier order and intrinsic control sizing preserved it.
 
 ## 7. Run a design-convergence loop
 

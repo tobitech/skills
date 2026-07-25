@@ -8,6 +8,7 @@ Use this protocol to judge whether a rendered interface is genuinely production-
 - [Required visual contexts](#required-visual-contexts)
 - [Critique and convergence sequence](#critique-and-convergence-sequence)
 - [Hierarchy, restraint, and alignment review](#hierarchy-restraint-and-alignment-review)
+- [Sibling-geometry audit](#sibling-geometry-audit)
 - [Environmental fit](#environmental-fit)
 - [Composition relationship review](#composition-relationship-review)
 - [Surface, boundary, and elevation review](#surface-boundary-and-elevation-review)
@@ -77,6 +78,28 @@ Judge these relationships explicitly rather than relying on a general impression
 
 If the interface looks busy, do not begin by adjusting random spacing. First reduce competing emphasis, visible boundaries, duplicated labels, and unnecessary controls; then re-evaluate spacing.
 
+## Sibling-geometry audit
+
+Do not approve repeated anatomy by impression. Build a compact private matrix for every repeated component family visible in the integrated render, including instances that live in separate cards or sections:
+
+| Family | Instances compared | Container edges | Icon frame | Copy start | Baseline or top | Trailing control | Result |
+|---|---|---|---|---|---|---|---|
+| Example: Settings rows | Model, Startup, Keyboard | shared | shared | shared | shared | shared | pass/fix |
+
+Compare all instances when the set is small; otherwise compare at least the first, middle, last, shortest-content, longest-content, and state variants. Inspect the actual render with zoomed same-scale crops, temporary guides, layout geometry, or screenshot coordinates. Check:
+
+- outer leading and trailing insets across separate containers;
+- repeated control right edges and control-column starts;
+- icon-frame edges and optical symbol placement;
+- primary and supporting copy starts;
+- first baselines or top anchors;
+- control width, height, and internal label padding for the same control family;
+- absent accessories, multiline copy, localization, and narrow/wide states.
+
+A component name, shared token, or intended grid does not prove that the rendered instances align. Feature-local frames, padding, intrinsic control sizes, nested containers, and modifier order can still create visible drift.
+
+Treat any unexplained delta larger than raster antialiasing as a production-readiness blocker. Fix the closest shared geometry owner when the relationship recurs. Re-run the same matrix on the confirmation render so the correction does not introduce a new mismatch.
+
 ## Environmental fit
 
 Judge the component as part of a composition:
@@ -125,6 +148,7 @@ Treat these as failures until resolved:
 - hierarchy, text contrast, or explanatory copy is not comfortably legible;
 - a framework default visibly conflicts with the product language;
 - sibling alignment, padding, typography, icon treatment, or surface treatment is inconsistent;
+- repeated geometry was approved without comparing actual sibling anchors across the integrated render;
 - required prose is rendered with tertiary, disabled, or otherwise faint emphasis;
 - nearly every text block uses the same dark emphasis, flattening the information hierarchy;
 - cards, borders, icon tiles, badges, or nested surfaces lack a semantic containment reason;
@@ -142,6 +166,6 @@ Treat these as failures until resolved:
 
 ## Fresh-eyes review
 
-For visually consequential, novel, or high-exposure surfaces, use an independent read-only reviewer when available after the first render. Give the reviewer the rendered artifact, relevant project references, and user goal—not the intended answer or the author's diagnosis.
+For visually consequential, novel, or high-exposure surfaces, use an independent read-only reviewer when available after the implementing agent has completed its own deterministic geometry, state, and accessibility checks. Give the reviewer the rendered artifact, relevant project references, and user goal—not the intended answer or the author's diagnosis.
 
-Use independent review as additional evidence, not as a replacement for the implementing agent's own critique.
+Use independent review as additional evidence for hierarchy, restraint, taste, pattern transfer, and fresh-eyes defects. A second model is not proof of alignment, sizing, overflow, contrast, or state correctness and does not replace the implementing agent's own critique.
