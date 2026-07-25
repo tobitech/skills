@@ -6,12 +6,13 @@ Use this protocol for every new or materially redesigned interface. It converts 
 
 - [1. Study references as systems](#1-study-references-as-systems)
 - [2. Rank information before styling](#2-rank-information-before-styling)
-- [3. Build a bounded text-emphasis ladder](#3-build-a-bounded-text-emphasis-ladder)
-- [4. Control containment and visual density](#4-control-containment-and-visual-density)
-- [5. Integrate icons without surface clutter](#5-integrate-icons-without-surface-clutter)
-- [6. Prove alignment with a layout ledger](#6-prove-alignment-with-a-layout-ledger)
-- [7. Run a design-convergence loop](#7-run-a-design-convergence-loop)
-- [8. Treat recurring failures as blockers](#8-treat-recurring-failures-as-blockers)
+- [3. Prove attention order and entity hierarchy](#3-prove-attention-order-and-entity-hierarchy)
+- [4. Build a bounded text-emphasis ladder](#4-build-a-bounded-text-emphasis-ladder)
+- [5. Control containment and visual density](#5-control-containment-and-visual-density)
+- [6. Integrate icons without surface clutter](#6-integrate-icons-without-surface-clutter)
+- [7. Prove alignment with a layout ledger](#7-prove-alignment-with-a-layout-ledger)
+- [8. Run a design-convergence loop](#8-run-a-design-convergence-loop)
+- [9. Treat recurring failures as blockers](#9-treat-recurring-failures-as-blockers)
 
 ## 1. Study references as systems
 
@@ -63,7 +64,75 @@ Choose one dominant message or task per region. When several elements compete fo
 
 For redesigns, preserve required behavior and content—not the accidental hierarchy of the old layout.
 
-## 3. Build a bounded text-emphasis ladder
+## 3. Prove attention order and entity hierarchy
+
+Do not infer hierarchy from semantic names such as “title,” “heading,” or “body.” Prove it from the rendered result.
+
+First decide whether the visible blocks are:
+
+- peer sections that may carry comparable headings;
+- nested parts of one semantic entity;
+- a parent entity followed by one decisive outcome and supporting evidence.
+
+For each important region, record a private attention ledger:
+
+| Intended rank | Element | Semantic role | Observed rank | Evidence | Result |
+|---|---|---|---|---|---|
+| 1 | Report identity | Orienting parent | 1 | First landmark at reduced scale | Pass |
+| 2 | Empty-state outcome | Decisive value | 2 | Darker than supporting prose | Pass |
+| 3 | Audit explanation | Required explanatory | 3 | Secondary but readable | Pass |
+
+Inspect the integrated render at normal size, reduced scale, and in grayscale. Briefly look away and return, squint, blur, or zoom out enough that literal reading becomes secondary. Name the first three visual destinations. This **first-read test** is the visual equivalent of asking “what will the user read first?” Compare the observed order with the ledger; do not rationalize a mismatch from source-code semantics.
+
+Judge effective prominence as a combination of:
+
+- size and weight;
+- foreground contrast and semantic color;
+- whitespace and isolation;
+- position in the composition;
+- surface, border, badge, or icon emphasis;
+- wording length and shape.
+
+A smaller isolated bold label can outrank a larger title. A muted value can disappear beneath its darker generic label. Therefore compare the complete rendered relationship, not font tokens alone.
+
+Apply these parent-child rules:
+
+- Give each region one intentional focal winner.
+- Within one semantic entity, a nested subsection label must not unintentionally outrank the parent identity or decisive outcome.
+- Do not emphasize a generic label while muting the useful value. Prefer “No updates proposed” over a prominent “Proposed updates” followed by a quiet “None.”
+- Treat the entity title, decisive state, explanation, and details as one ordered composition rather than unrelated text blocks.
+- Give Markdown, rich text, HTML, and framework-provided heading semantics a contextual embedded style. Document-level heading defaults are not valid inside every card, report, row, or transcript component.
+- If the decisive result intentionally comes before the entity identity, declare that outcome-first order explicitly and verify surrounding context still orients the user.
+
+For example, this fails:
+
+```text
+Memory Review report          15 pt medium
+Proposed memory updates       16 pt semibold
+None.                         muted body
+```
+
+The subsection wins attention even though the report is one entity, and the generic label outranks the value. Prefer:
+
+```text
+Memory Review report          parent identity
+No memory updates proposed.   decisive outcome
+Audit explanation             readable secondary
+Proposal details              subordinate when present
+```
+
+Treat the following as blockers:
+
+- observed first attention differs from the declared first destination;
+- two or more elements compete for first attention without a deliberate peer relationship;
+- a nested heading or supporting label outranks its parent entity or decisive value;
+- a generic label is more prominent than the status, result, count, or value it names;
+- renderer defaults create a stronger embedded heading than the component-owned title;
+- the agent cannot name the first three observed destinations from the actual integrated render.
+
+Fix the content model first when possible: combine labels and values, state the outcome directly, or turn peer-looking blocks into a clear parent-child structure. Then correct contextual typography, color, spacing, and surface emphasis. Re-render and repeat the ledger before approval.
+
+## 4. Build a bounded text-emphasis ladder
 
 Use semantic emphasis roles rather than isolated foreground colors or opacity values.
 
@@ -95,7 +164,7 @@ Combine color with role-appropriate size, weight, spacing, and placement. Do not
 
 Test the hierarchy at reduced scale and in grayscale when possible. The dominant message, required explanation, and optional metadata should remain distinguishable by luminance and structure. If everything becomes one dark block or one pale haze, revise the recipe.
 
-## 4. Control containment and visual density
+## 5. Control containment and visual density
 
 Visual clutter comes from competing boundaries and emphasis, not only from the amount of content.
 
@@ -120,7 +189,7 @@ Run a subtraction pass after the first render. Remove or simplify one boundary, 
 
 Compare boundary count with the selected production references. If the candidate uses more cards, pills, tiles, dividers, or emphasized labels, justify each extra one.
 
-## 5. Integrate icons without surface clutter
+## 6. Integrate icons without surface clutter
 
 Default neutral informational icons to a bare glyph in a stable semantic frame. Let alignment, weight, and color integrate the symbol with the card or row.
 
@@ -137,7 +206,7 @@ Do not place a quiet icon on a decorative tile merely because the parent is a ca
 
 Ensure the icon remains subordinate to the primary label unless the icon itself is the object or action. Check mixed glyph shapes inside the same frame and align multiline rows by the copy, not by raw symbol bounds.
 
-## 6. Prove alignment with a layout ledger
+## 7. Prove alignment with a layout ledger
 
 A generic grid intention is insufficient. Before implementation, name the repeated anchors:
 
@@ -161,7 +230,7 @@ Prefer a real layout primitive—SwiftUI `Grid`, CSS Grid, a shared row componen
 
 On the integrated render, trace or measure vertical lines through copy starts and trailing edges. Compare repeated anatomy across separate cards and sections as well as inside one container. Check the first, middle, and last item, shortest and longest content, multiline content, absent accessories, and narrow/wide widths. Use same-scale crops, temporary guides, layout geometry, or screenshot coordinates when available; a declared component or grid is not proof that modifier order and intrinsic control sizing preserved it.
 
-## 7. Run a design-convergence loop
+## 8. Run a design-convergence loop
 
 Do not stop when the first render is merely acceptable.
 
@@ -179,11 +248,14 @@ For new or materially redesigned UI:
 
 Stop when no blocker or major issue remains and the next change would be minor, subjective, or outside scope. Record unresolved recurring decisions as design gaps.
 
-## 8. Treat recurring failures as blockers
+## 9. Treat recurring failures as blockers
 
 Do not call the design complete when any of these remain:
 
 - required reading is styled like metadata or disabled content;
+- the observed first-read order differs from the intended attention order;
+- a nested heading, generic label, or supporting block outranks its parent entity or decisive value;
+- embedded Markdown, HTML, or framework heading defaults flatten or invert the component hierarchy;
 - every text block has nearly equal darkness and visual weight;
 - several elements compete for first attention;
 - the candidate preserves all source blocks without reconsidering organization;

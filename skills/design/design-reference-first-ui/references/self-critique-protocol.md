@@ -8,6 +8,7 @@ Use this protocol to judge whether a rendered interface is genuinely production-
 - [Required visual contexts](#required-visual-contexts)
 - [Critique and convergence sequence](#critique-and-convergence-sequence)
 - [Hierarchy, restraint, and alignment review](#hierarchy-restraint-and-alignment-review)
+- [Attention-order audit](#attention-order-audit)
 - [Sibling-geometry audit](#sibling-geometry-audit)
 - [Environmental fit](#environmental-fit)
 - [Composition relationship review](#composition-relationship-review)
@@ -43,15 +44,16 @@ Inspect light and dark appearance, relevant widths or size classes, and the most
 
 1. Render the first complete candidate.
 2. Record a private critique of three to seven concrete observations.
-3. Classify each observation:
+3. Compare the intended first three attention destinations with the observed first three in the integrated render.
+4. Classify each observation:
    - **blocker** — visibly unfinished, confusing, inaccessible, or inconsistent enough that it should not ship;
    - **major** — materially weakens hierarchy, cohesion, legibility, or interaction quality;
    - **minor** — optical polish that improves refinement without changing comprehension.
-4. Run a **structural pass**: simplify the content model, grouping, disclosure, containment, and action placement; remove redundant surfaces and information.
-5. Run a **visual pass**: correct text emphasis, spacing, density, icon treatment, alignment anchors, geometry, and environmental separation.
-6. Re-render the integrated context as a **confirmation render**.
-7. Compare it back to the project language and the extracted production-reference patterns.
-8. Repeat while a reference-backed material improvement remains visible, even when the implementation technically works.
+5. Run a **structural pass**: simplify the content model, grouping, disclosure, containment, and action placement; remove redundant surfaces and information.
+6. Run a **visual pass**: correct text emphasis, spacing, density, icon treatment, alignment anchors, geometry, and environmental separation.
+7. Re-render the integrated context as a **confirmation render**.
+8. Compare it back to the project language and the extracted production-reference patterns.
+9. Repeat while a reference-backed material improvement remains visible, even when the implementation technically works.
 
 Stop only when:
 
@@ -77,6 +79,21 @@ Judge these relationships explicitly rather than relying on a general impression
 - Verify that controls align to the declared grid rather than to an arbitrary visual midpoint produced by spacer chains.
 
 If the interface looks busy, do not begin by adjusting random spacing. First reduce competing emphasis, visible boundaries, duplicated labels, and unnecessary controls; then re-evaluate spacing.
+
+## Attention-order audit
+
+Use the first-read test and attention ledger in [visual-hierarchy-and-restraint.md](visual-hierarchy-and-restraint.md) for every important region.
+
+1. Classify the visible blocks as peer sections, nested parts of one entity, or a parent entity with a decisive outcome and supporting evidence.
+2. Write the intended first three attention destinations before inspecting the render.
+3. At normal size, reduced scale, and in grayscale, record the observed first three without using source-code type names as evidence.
+4. Compare parent and child prominence using size, weight, contrast, whitespace, position, surface emphasis, and wording—not size alone.
+5. Inspect embedded Markdown, rich text, HTML, and native semantic headings for context-inappropriate document-level prominence.
+6. Treat a mismatch, tie for first attention, or child-over-parent inversion as a blocker.
+7. Fix the closest reusable owner: content model, semantic type recipe, contextual renderer style, or shared component.
+8. Re-render and repeat the ledger.
+
+Do not approve a single semantic entity when a nested generic label is louder than both its identity and useful value. Do not approve required explanation that becomes tertiary merely to make the hierarchy appear stronger.
 
 ## Sibling-geometry audit
 
@@ -146,6 +163,9 @@ Treat these as failures until resolved:
 - a floating or layered surface has no credible boundary from its background;
 - the component was reviewed only in isolation;
 - hierarchy, text contrast, or explanatory copy is not comfortably legible;
+- the observed first-read order differs from the declared attention order;
+- a nested heading, generic label, or supporting block unintentionally outranks its parent entity or decisive value;
+- embedded content inherits document-level heading prominence that does not fit its component context;
 - a framework default visibly conflicts with the product language;
 - sibling alignment, padding, typography, icon treatment, or surface treatment is inconsistent;
 - repeated geometry was approved without comparing actual sibling anchors across the integrated render;

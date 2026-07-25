@@ -51,6 +51,10 @@ Verify both directions: the candidate should benefit from mature external patter
 
 - Is the screen purpose clear at a glance?
 - Does the intended scan order work at reduced scale?
+- Were the first three intended and observed attention destinations recorded and compared?
+- Are visible blocks correctly treated as peer sections, nested parts of one entity, or a parent with a decisive outcome?
+- Does any nested heading or generic label unintentionally outrank its parent entity or useful value?
+- Do embedded Markdown, rich text, HTML, or native semantic headings use a context-appropriate hierarchy?
 - Is one action visually dominant where appropriate?
 - Is secondary information actually subordinate?
 
@@ -111,10 +115,11 @@ Verify both directions: the candidate should benefit from mature external patter
 Use [self-critique-protocol.md](self-critique-protocol.md). Treat the first complete render as a candidate, not the likely endpoint:
 
 1. Run a structural and subtraction pass that fixes content organization, grouping, disclosure, action placement, and unnecessary containment.
-2. Run a visual pass that fixes hierarchy, text emphasis, spacing, alignment, icon integration, surface treatment, environmental fit, and states.
-3. Complete the sibling-geometry audit with zoomed same-scale evidence, guides, layout geometry, or screenshot coordinates. Fix unexplained drift at its shared geometry owner.
-4. Re-render the integrated context and repeat the same sibling comparison alongside the project language and extracted reference patterns.
-5. Repeat when a material reference-backed improvement remains.
+2. Complete the attention-order audit at normal size, reduced scale, and in grayscale; fix any parent-child inversion or mismatch between intended and observed first-read order.
+3. Run a visual pass that fixes hierarchy, text emphasis, spacing, alignment, icon integration, surface treatment, environmental fit, and states.
+4. Complete the sibling-geometry audit with zoomed same-scale evidence, guides, layout geometry, or screenshot coordinates. Fix unexplained drift at its shared geometry owner.
+5. Re-render the integrated context and repeat the attention and sibling comparisons alongside the project language and extracted reference patterns.
+6. Repeat when a material reference-backed improvement remains.
 
 Do not manufacture endless churn. Stop when no blocker or major issue remains and the next change would be minor, subjective, or outside scope.
 

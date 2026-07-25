@@ -17,6 +17,7 @@ Use reviewed product evidence before invention. Preserve platform-native behavio
 - Treat existing code as evidence, not automatically as an approved design. Prefer documented patterns and golden screens.
 - Require a composition grammar as well as a token inventory. A valid font, color, or spacing value can still produce a weak hierarchy when its relationship, alignment, proportion, or surface plane is wrong.
 - Begin visual design from ranked information and task priority rather than styling the source view tree. Require a bounded text-emphasis system, justified containment, deliberate icon treatment, and explicit alignment anchors.
+- Treat attention order as a testable relationship. For each important region, distinguish one semantic entity from peer sections, declare the first three intended visual destinations, and reject a render whose observed order differs.
 - Use native interaction semantics and accessibility while applying project-specific presentation. Follow: **native behavior, project presentation**.
 - Classify requested visual changes by ownership before implementation. Inspect consumers before changing foundations or shared components; prefer named semantic variants over repeated local overrides.
 - Report reusable or conflicting design-system gaps while continuing with a reversible provisional choice. Pause only for decisions that materially change product behavior, information architecture, or scope.
@@ -85,6 +86,7 @@ Identify:
 
 - screen archetype and user goal;
 - scan order and primary action;
+- whether visible blocks form one semantic entity, nested parts of that entity, or peer sections;
 - ranked information and what remains visible, combines, moves, or becomes progressive disclosure;
 - typography and text-emphasis relationships, icon integration, density, alignment grid, surface strategy, and control-placement rules;
 - what the reference deliberately leaves unbounded, unaccented, or absent;
@@ -108,6 +110,7 @@ Extract shared decisions and omissions, explain platform adaptation, and record 
 Before coding, resolve:
 
 - intended outcome and dominant scan path;
+- entity boundaries plus the first three intended attention destinations for each important region;
 - ranked content map: orienting, actionable, required explanatory, supporting, and optional metadata;
 - screen archetype and content hierarchy;
 - primary, secondary, and destructive actions;
@@ -152,6 +155,8 @@ Read [self-critique-protocol.md](references/self-critique-protocol.md) and [visu
 Perform a private failure-seeking critique of the first render. Judge the component in isolation and within its surrounding application environment. Identify what looks accidental, generic, visually unresolved, poorly separated, misaligned, illegible, inconsistent, or unshippable. Fix every production-readiness blocker and major issue, then re-render and perform a confirmation pass.
 
 Compare the result with the selected internal and production reference set. Compare relationships—not merely token names or individual measurements—including flow continuity, data presentation, scan order, text-emphasis contrast, proximity, baseline and edge alignment, proportions, boundary count, surface nesting, icon integration, state behavior, and environmental contrast.
+
+Run the attention-order audit in [visual-hierarchy-and-restraint.md](references/visual-hierarchy-and-restraint.md). Compare the declared first three destinations with what actually dominates at normal size, reduced scale, and in grayscale. Treat an unintended nested heading, generic label, or supporting block that outranks its parent entity or decisive value as a blocker; fix the content model or contextual type recipe and re-render.
 
 Review the candidate at reduced scale and, when tooling permits, in grayscale. Run a mandatory sibling-geometry audit before relying on general visual judgment. For every repeated component family visible in the integrated render—including instances separated into different cards or sections—record the expected container, icon, copy, baseline, and trailing-control anchors; compare at least the first, middle, and last or all instances when the set is small; and verify the actual edges with zoomed crops, guides, geometry inspection, or screenshot coordinates. A declared grid is not evidence that the render follows it. Treat any unexplained delta larger than rendering antialiasing as a blocker, fix the shared geometry owner, and repeat the same comparison on the confirmation render.
 
