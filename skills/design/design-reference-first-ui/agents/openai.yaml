@@ -1,4 +1,4 @@
 interface:
   display_name: "Reference-First UI Design"
-  short_description: "Design, study references, and iterate to polished UI"
-  default_prompt: "Use $design-reference-first-ui to bootstrap or extend this project's visual foundation, study relevant production patterns, implement the interface, and iteratively critique it in application context until no material design issue remains."
+  short_description: "Synthesize references and iterate to polished UI"
+  default_prompt: "Use $design-reference-first-ui to bootstrap or extend this project's visual foundation, study a multi-example reference set across relevant flows, components, data, states, and product systems, reject source flaws, implement the interface, and iteratively critique it in project context until no material design issue remains."

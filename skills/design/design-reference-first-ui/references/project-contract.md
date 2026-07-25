@@ -7,11 +7,12 @@ Use this reference to discover the design evidence available in a repository and
 1. Read repository instructions such as `AGENTS.md`.
 2. Find the design entry point and documentation index.
 3. Find the project visual language or brand/product principles.
-4. Find UI patterns, screen archetypes, and component usage guidance.
-5. Find design tokens and reusable component source.
-6. Find golden screenshots, previews, snapshot tests, demos, and story catalogs.
-7. Inspect the nearest implemented surfaces and their rendered output.
-8. Find prior design decisions and unresolved gaps.
+4. Find the reference source map, approved inspiration, and recorded no-transfer decisions.
+5. Find UI patterns, screen archetypes, flow guidance, and component usage guidance.
+6. Find design tokens and reusable component source.
+7. Find golden screenshots, previews, snapshot tests, demos, and story catalogs.
+8. Inspect the nearest surfaces, complete flow, sibling components, and unrelated product-defining screens.
+9. Find prior design decisions and unresolved gaps.
 
 Use fast repository search and adapt to local naming. Do not require a `docs/design` directory or any exact filename.
 
@@ -51,8 +52,9 @@ Look for guidance covering:
 - surface, border, radius, and elevation philosophy;
 - control placement and action hierarchy;
 - common screen archetypes and navigation structures;
+- reference coverage across flows, component families, data shapes, states, product systems, platforms, and internal continuity;
 - motion, feedback, hover, focus, and accessibility behavior;
-- approved production references and what to borrow from each;
+- approved production references, examples inspected, what to borrow, and what not to transfer;
 - explicit anti-patterns;
 - golden screens and their intended lessons.
 

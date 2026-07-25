@@ -40,16 +40,21 @@ Use this structure when establishing project-specific design guidance. Keep it c
 
 List approved internal and production references. For each, record:
 
-- screen or flow;
+- product, screen, flow, or component family;
 - evidence status: approved, external inspiration, or current-state audit;
+- coverage lens: whole-product system, flow, archetype/category, component, data shape, state/scale, platform, or project continuity;
+- examples inspected rather than only the product name;
 - design problem it demonstrates;
 - ranked information and intended scan order;
 - text-emphasis relationships and maximum neutral levels;
 - boundary count, surface strategy, and deliberate omissions;
 - icon treatment and explicit alignment anchors;
-- decisions to adopt;
-- decisions not to transfer;
+- classification: durable convention, category pattern, product signature, current trend, or possible flaw;
+- decisions to adopt and how they translate into the project;
+- decisions not to transfer and why;
 - relevant target platform.
+
+Maintain coverage across the lenses needed by the project's recurring work. A source map should reveal whether the team understands a preferred product's broader system, flows, component families, and data presentation—not merely remember a few attractive screens.
 
 ## Visual roles
 
@@ -133,6 +138,9 @@ Record rejected treatments with a reason, such as:
 - nested surfaces without meaningful containment;
 - decorative icon tiles placed on already bounded cards;
 - repeated controls positioned by unrelated spacer chains instead of a shared trailing anchor;
+- one external screen treated as blanket approval for an entire design;
+- a source's trend, brand signature, accessibility weakness, or inconsistency copied as if it were a durable convention;
+- external consistency achieved at the expense of belonging to the current project;
 - inconsistent alignment between sibling components.
 
 ## Open design decisions

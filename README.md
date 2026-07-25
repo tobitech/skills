@@ -13,7 +13,8 @@ Design, implement, and critically review polished product interfaces across iOS,
 It includes:
 
 - just-in-time design-system bootstrapping for fresh projects;
-- production-reference research, omission study, and decision-level source mapping;
+- multi-example production-reference research across flows, components, data shapes, categories, states, and whole-product systems;
+- explicit separation of durable patterns from product signatures, temporary trends, and source flaws;
 - semantic typography and color-emphasis hierarchy;
 - containment restraint, icon integration, and explicit alignment grids;
 - foundation, shared-component, variant, and local-composition ownership rules;

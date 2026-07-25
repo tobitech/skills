@@ -62,16 +62,18 @@ Preserve useful infrastructure. Evolve it toward semantic roles instead of creat
 If the user supplied references, begin with those. Otherwise inspect a compact starter set:
 
 - the target platform's first-party conventions for behavior;
-- two or three mature production interfaces with the same interaction or information-structure problem;
+- several examples from two or three mature production interfaces with the same interaction or information-structure problem;
 - a focused Mobbin or curated-collection search when stronger direct sources are unavailable.
+
+Cover the lenses the first screen actually needs: whole-product system, end-to-end flow, screen archetype/category, component family, data shape, states/scale, platform convention, and project continuity. For material or novel UI, a reasonable default is four to eight examples across at least four applicable lenses, including multiple areas of a preferred product rather than one isolated screenshot.
 
 Record influence at decision level:
 
-| Source | Status | Problem inspected | Pattern evidence | Deliberate omission | Project adaptation |
+| Source and examples | Status and lens | Problem inspected | Pattern evidence | Reject or omit | Project adaptation |
 |---|---|---|---|---|---|
-| Product or screen | external inspiration, approved reference, or current-state audit | Concrete UI problem | Scan order, text emphasis, containment, icon, alignment, action, or state relationship | What the source successfully leaves out | Platform and product-specific translation |
+| Product, flow, screens, or component family | Evidence status plus flow, archetype, component, data, state, system, platform, or internal lens | Concrete UI problem | Scan order, text emphasis, containment, icon, alignment, action, data, or state relationship | Source flaw, trend, signature, or irrelevant behavior | Platform and product-specific translation |
 
-Do not list a product without saying what it is evidence for. Label project screenshots as audit evidence unless the user explicitly approves them.
+Do not list a product without naming the examples inspected and what they are evidence for. Label project screenshots as audit evidence unless the user explicitly approves them. Treat production references as reviewed evidence, not flawless authority.
 
 ## 4. Establish the minimum visual contract
 
@@ -162,15 +164,16 @@ Tests enforce ownership; rendered review determines taste.
 Treat the requested first interface as both product work and a system calibration surface:
 
 1. Perform the reference-first design preflight.
-2. Implement with the starter foundations.
-3. Render isolated component states and the integrated screen.
-4. Check light/dark appearance, resizable or responsive behavior, and important edge states as relevant.
-5. Run the self-critique and visual quality gate.
-6. Complete a structural/subtraction pass and a visual hierarchy/alignment pass.
-7. Re-render, compare the candidate with the extracted reference patterns, and repeat while a material improvement remains.
-8. Promote proven relationships into semantic roles or shared components.
-9. Record unresolved choices as design gaps.
-10. Mark the integrated render as a **candidate golden** until the user or project explicitly approves it.
+2. Confirm that the reference set covers the relevant flow, component, data, state, system, platform, and internal-continuity questions.
+3. Implement with the starter foundations.
+4. Render isolated component states and the integrated screen.
+5. Check light/dark appearance, resizable or responsive behavior, and important edge states as relevant.
+6. Run the self-critique and visual quality gate.
+7. Complete a structural/subtraction pass and a visual hierarchy/alignment pass.
+8. Re-render, compare the candidate with both the extracted reference patterns and the project's broader language, and repeat while a material improvement remains.
+9. Promote proven relationships into semantic roles or shared components.
+10. Record unresolved choices as design gaps.
+11. Mark the integrated render as a **candidate golden** until the user or project explicitly approves it.
 
 This loop is what turns provisional starter values into a project-specific system.
 
@@ -180,6 +183,7 @@ The project can “hit the ground running” when:
 
 - future agents can find the design entry point from repository instructions;
 - the reference map explains where to look and what to borrow;
+- the reference set covers more than one isolated screen and records source treatments that should not transfer;
 - the first screen uses semantic foundations rather than scattered raw styling;
 - the recurring primitives have isolated and integrated previews;
 - the first screen has converged through failure-seeking structural and visual critique passes;

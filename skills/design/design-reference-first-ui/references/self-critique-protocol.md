@@ -130,6 +130,9 @@ Treat these as failures until resolved:
 - cards, borders, icon tiles, badges, or nested surfaces lack a semantic containment reason;
 - repeated rows or cards do not share explicit copy and trailing-control anchors;
 - production references were collected without extracting their hierarchy, restraint, alignment, and omission patterns;
+- a material or novel design was justified by one isolated screenshot without checking relevant flows, component families, data shapes, states, or whole-product patterns;
+- a borrowed product signature, temporary trend, accessibility weakness, or source inconsistency was treated as a durable convention;
+- the candidate matches an external reference but feels inconsistent with the project's surrounding screens, components, or full flow;
 - intended interactive states are absent, ambiguous, or visually broken;
 - shadows, outlines, focus rings, or content are clipped;
 - empty, loading, error, disabled, overflow, or long-content states collapse the layout;

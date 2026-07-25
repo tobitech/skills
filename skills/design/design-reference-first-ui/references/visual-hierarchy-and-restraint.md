@@ -15,7 +15,7 @@ Use this protocol for every new or materially redesigned interface. It converts 
 
 ## 1. Study references as systems
 
-Do not collect references only for mood. Assign each reference a concrete question, then extract an implementable pattern.
+Do not collect references only for mood. Use [production-reference-research.md](production-reference-research.md) to build a compact multi-example coverage set across the relevant product system, flow, screen archetype, component family, data shape, states, platform, and internal project contexts. Assign each reference a concrete question, then extract an implementable pattern.
 
 Inspect these dimensions:
 
@@ -36,7 +36,9 @@ Record a falsifiable recipe, not an adjective. “Clean” is not a recipe. “O
 
 Use different references for different decisions when appropriate. A platform-native app may supply interaction behavior while a mature web product supplies information grouping. Do not let one screen become blanket approval.
 
-If the agent cannot explain what the reference omits, how many neutral text levels it uses, why each boundary exists, and which edges align, it has not studied the reference deeply enough.
+Classify each observation as a durable convention, category pattern, product signature, current trend, or possible source flaw. Production references are reviewed evidence, not unquestionable truth.
+
+If the agent cannot explain what the references collectively establish, where they disagree, what each source omits, how many neutral text levels it uses, why each boundary exists, which edges align, and which treatments should not transfer, it has not studied the evidence deeply enough.
 
 ## 2. Rank information before styling
 
@@ -189,5 +191,7 @@ Do not call the design complete when any of these remain:
 - cards, pills, borders, or fills outnumber comparable reference patterns without justification;
 - repeated rows do not share a copy start or trailing-control edge;
 - controls float in available space instead of belonging to a declared column;
+- a material or novel design relies on one isolated source screen despite broader relevant examples being available;
 - the agent cannot state what it learned from references per decision;
+- the agent cannot state which source treatments it deliberately rejected and why;
 - the integrated candidate has not been re-rendered after hierarchy and restraint critique.

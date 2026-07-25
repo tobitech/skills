@@ -32,13 +32,16 @@ Render the primary state plus the states most likely to expose layout weakness. 
 
 View the candidate beside:
 
-- the nearest approved project screen;
+- the nearest approved project screen and surrounding flow;
+- one or more unrelated approved screens that express the broader product language;
 - the project pattern or component guidance;
-- the production references that informed the design.
+- the production reference set that informed the flow, archetype, component, data, and state decisions.
 
 Compare relationships rather than pixel-copying unrelated products.
 
-Use the reference's extracted pattern study. Compare intended scan order, semantic text-emphasis levels, boundary count, icon treatment, alignment anchors, action placement, and deliberate omissions. Correct unjustified deltas rather than accepting a merely similar mood.
+Use the reference set's extracted pattern studies. Compare flow continuity, data presentation, intended scan order, semantic text-emphasis levels, boundary count, icon treatment, alignment anchors, action placement, state behavior, and deliberate omissions. Correct unjustified deltas rather than accepting a merely similar mood.
+
+Verify both directions: the candidate should benefit from mature external patterns while still belonging to the project. Reject borrowed signatures, trends, and source flaws that conflict with the project's character, components, platform behavior, accessibility, or surrounding screens.
 
 ## Review checklist
 

@@ -13,6 +13,7 @@ Use reviewed product evidence before invention. Preserve platform-native behavio
 - When a project has no visual language or design system, bootstrap a minimum viable design contract and implement the first screen in the same workflow. Do not require pre-existing `design.md` files or delay the first interface for a speculative comprehensive system.
 - Treat a feature plan as product and implementation direction, not blanket approval of visual treatment. Require visual evidence for typography, icon, density, alignment, surface, and control-placement decisions.
 - Prefer, in order: an approved project pattern, a comparable mature production pattern, platform conventions for behavior, then a new composition.
+- For material or novel UI, build a compact multi-example reference set across relevant flows, screen archetypes, component families, data shapes, states, and whole-product systems. Do not make one similar screenshot carry every design decision.
 - Treat existing code as evidence, not automatically as an approved design. Prefer documented patterns and golden screens.
 - Require a composition grammar as well as a token inventory. A valid font, color, or spacing value can still produce a weak hierarchy when its relationship, alignment, proportion, or surface plane is wrong.
 - Begin visual design from ranked information and task priority rather than styling the source view tree. Require a bounded text-emphasis system, justified containment, deliberate icon treatment, and explicit alignment anchors.
@@ -66,7 +67,9 @@ Use [project-visual-language-template.md](references/project-visual-language-tem
 
 ### 4. Inspect the nearest precedents
 
-Inspect the actual UI or rendered previews when available, not only source code. Select precedents by interaction and information structure, not superficial visual similarity.
+Inspect the actual UI or rendered previews when available, not only source code. Select precedents by interaction, information structure, flow stage, component family, and data shape—not superficial visual similarity.
+
+Inspect the project laterally as well as locally. Review the nearest screen, the complete surrounding flow, sibling components, unrelated golden screens that express the product language, and the same data or action pattern elsewhere. The result must solve the local problem without becoming a visual dialect that appears only on one screen.
 
 Evaluate a precedent per decision. A screen may be a valid reference for navigation structure while remaining unapproved for row density, icon tint, typography, card treatment, or toolbar composition. Do not treat one structurally similar screen as blanket visual approval.
 
@@ -96,7 +99,9 @@ Inspect all critical recurring dimensions before reporting gaps. Group related g
 
 If no strong internal precedent exists, read [production-reference-research.md](references/production-reference-research.md). Search narrowly for the same design problem in mature production applications. Inspect actual screenshots or live UI and synthesize the reviewed pattern instead of copying an app wholesale.
 
-Prefer two or three comparable references when practical. Extract the shared decisions and omissions, explain platform adaptation, and record which reference influenced each hierarchy, grouping, surface, icon, alignment, or interaction choice.
+For material or novel UI, inspect a compact evidence set across the applicable lenses: whole-product system, end-to-end flow, screen archetype or category, component family, data shape, states and scale, platform convention, and project continuity. Normally use several examples from the user's preferred sources, including multiple areas of the same product, and compare two or more products when available.
+
+Extract shared decisions and omissions, explain platform adaptation, and record which reference influenced each hierarchy, grouping, surface, icon, alignment, data-presentation, or interaction choice. Classify observations as durable conventions, category patterns, product signatures, current trends, or source flaws. Adopt selectively; production quality does not make every source decision transferable.
 
 ### 6. Perform a private design preflight
 
@@ -114,7 +119,8 @@ Before coding, resolve:
 - important normal, empty, loading, error, disabled, selected, and overflow states;
 - responsive or resizable behavior;
 - accessibility and platform-native interaction requirements;
-- references used and open design-system gaps.
+- reference coverage across flow, archetype, components, data, states, product system, platform, and internal continuity;
+- patterns adopted, patterns deliberately rejected, and open design-system gaps.
 
 Keep this preflight internal unless sharing it helps the user evaluate a meaningful decision.
 
@@ -145,9 +151,11 @@ Read [self-critique-protocol.md](references/self-critique-protocol.md) and [visu
 
 Perform a private failure-seeking critique of the first render. Judge the component in isolation and within its surrounding application environment. Identify what looks accidental, generic, visually unresolved, poorly separated, misaligned, illegible, inconsistent, or unshippable. Fix every production-readiness blocker and major issue, then re-render and perform a confirmation pass.
 
-Compare the result with the selected internal and production references. Compare relationships—not merely token names or individual measurements—including scan order, text-emphasis contrast, proximity, baseline and edge alignment, proportions, boundary count, surface nesting, icon integration, and environmental contrast.
+Compare the result with the selected internal and production reference set. Compare relationships—not merely token names or individual measurements—including flow continuity, data presentation, scan order, text-emphasis contrast, proximity, baseline and edge alignment, proportions, boundary count, surface nesting, icon integration, state behavior, and environmental contrast.
 
 Review the candidate at reduced scale and, when tooling permits, in grayscale. Trace the declared alignment anchors and run a subtraction pass that challenges every border, fill, icon tile, badge, label, and persistent action.
+
+Run a project-fit pass after the external comparison. Verify that borrowed patterns were translated through the project's approved foundations and components, that the screen fits neighboring and unrelated product areas, and that no product-specific signature, fashionable treatment, or known source flaw was imported without justification.
 
 For a new or materially redesigned interface, run a convergence loop with at least:
 
@@ -163,7 +171,8 @@ Do not claim visual verification from a successful build alone. If rendering is 
 
 Lead with the implemented outcome. Briefly report:
 
-- visual references and project patterns that materially influenced the design;
+- reference lenses and project patterns that materially influenced the design;
+- borrowed patterns and source treatments deliberately rejected;
 - project design artifacts and reusable foundations created or changed;
 - preview or screenshot states inspected;
 - material issues found and corrected during self-critique;
