@@ -2,6 +2,20 @@
 
 Use this protocol when a project has no trustworthy visual language, reference map, design-system implementation, or reviewed screen precedent.
 
+## Contents
+
+- [Goal](#goal)
+- [Operating rules](#operating-rules)
+- [1. Understand the product and platform](#1-understand-the-product-and-platform)
+- [2. Audit before scaffolding](#2-audit-before-scaffolding)
+- [3. Build a starter reference source map](#3-build-a-starter-reference-source-map)
+- [4. Establish the minimum visual contract](#4-establish-the-minimum-visual-contract)
+- [5. Create a discoverable project contract](#5-create-a-discoverable-project-contract)
+- [6. Implement the minimum reusable foundation](#6-implement-the-minimum-reusable-foundation)
+- [7. Use the first screen to close the loop](#7-use-the-first-screen-to-close-the-loop)
+- [8. Readiness check](#8-readiness-check)
+- [Commentary and handoff](#commentary-and-handoff)
+
 ## Goal
 
 Leave the project able to produce a coherent first interface immediately and make the next interface easier. Bootstrap a minimum viable design contract, not a speculative comprehensive component library.
@@ -53,9 +67,9 @@ If the user supplied references, begin with those. Otherwise inspect a compact s
 
 Record influence at decision level:
 
-| Source | Status | Problem inspected | Adopt | Do not transfer | Platform |
+| Source | Status | Problem inspected | Pattern evidence | Deliberate omission | Project adaptation |
 |---|---|---|---|---|---|
-| Product or screen | external inspiration, approved reference, or current-state audit | Concrete UI problem | Specific relationships or behaviors | Brand, irrelevant platform behavior, or rejected treatment | iOS, macOS, web |
+| Product or screen | external inspiration, approved reference, or current-state audit | Concrete UI problem | Scan order, text emphasis, containment, icon, alignment, action, or state relationship | What the source successfully leaves out | Platform and product-specific translation |
 
 Do not list a product without saying what it is evidence for. Label project screenshots as audit evidence unless the user explicitly approves them.
 
@@ -73,16 +87,20 @@ Use `project-visual-language-template.md` as a checklist. Fill only evidence-bac
 
 - page, section, row, card, supporting, metadata, and micro typography;
 - readable base text and hierarchy relationships;
+- bounded primary, secondary, tertiary, disabled, and semantic-status emphasis roles;
+- required-copy contrast rules that prevent explanatory content from becoming faint metadata;
 - base, grouped, content, floating, accent, and semantic-status color roles;
-- neutral versus accent icon policy;
+- bare-glyph, tiled, tinted, semantic-status, and brand icon policy;
 - radius, border, elevation, and material philosophy.
 
 ### Composition grammar
 
 - a compact spacing relationship ladder;
 - stable alignment anchors for repeated anatomy;
+- an explicit alignment ledger for recurring rows and cards;
 - content width and minimum/ideal/maximum sizing rules;
 - legal surface nesting and environmental separation;
+- a containment budget and subtraction rule for cards, fills, borders, dividers, badges, icon tiles, and rounded rectangles;
 - typography recipes for the first recurring archetypes.
 
 ### Interaction grammar
@@ -148,10 +166,11 @@ Treat the requested first interface as both product work and a system calibratio
 3. Render isolated component states and the integrated screen.
 4. Check light/dark appearance, resizable or responsive behavior, and important edge states as relevant.
 5. Run the self-critique and visual quality gate.
-6. Fix production-readiness blockers and complete at least one polish pass.
-7. Promote proven relationships into semantic roles or shared components.
-8. Record unresolved choices as design gaps.
-9. Mark the integrated render as a **candidate golden** until the user or project explicitly approves it.
+6. Complete a structural/subtraction pass and a visual hierarchy/alignment pass.
+7. Re-render, compare the candidate with the extracted reference patterns, and repeat while a material improvement remains.
+8. Promote proven relationships into semantic roles or shared components.
+9. Record unresolved choices as design gaps.
+10. Mark the integrated render as a **candidate golden** until the user or project explicitly approves it.
 
 This loop is what turns provisional starter values into a project-specific system.
 
@@ -163,7 +182,7 @@ The project can “hit the ground running” when:
 - the reference map explains where to look and what to borrow;
 - the first screen uses semantic foundations rather than scattered raw styling;
 - the recurring primitives have isolated and integrated previews;
-- the first screen has received a failure-seeking critique and polish pass;
+- the first screen has converged through failure-seeking structural and visual critique passes;
 - provisional decisions and unresolved gaps are visible;
 - no document or component claims approval without reviewed evidence.
 

@@ -2,6 +2,17 @@
 
 Use this guide when a project has tokens but still produces inconsistent spacing, alignment, proportions, surface layering, or typography. The goal is a small visual grammar that tells agents how valid values relate.
 
+## Contents
+
+- [Tokens are necessary but insufficient](#tokens-are-necessary-but-insufficient)
+- [Establish a spacing relationship ladder](#establish-a-spacing-relationship-ladder)
+- [Define alignment anchors](#define-alignment-anchors)
+- [Encode sizing and proportion rules](#encode-sizing-and-proportion-rules)
+- [Define a surface plane ladder](#define-a-surface-plane-ladder)
+- [Define typography recipes](#define-typography-recipes)
+- [Turn rules into implementation](#turn-rules-into-implementation)
+- [Failure-seeking composition critique](#failure-seeking-composition-critique)
+
 ## Tokens are necessary but insufficient
 
 A token inventory constrains values. It does not decide:
@@ -43,6 +54,8 @@ Decide how single-line and multiline content align. Multiline copy commonly need
 
 Use a semantic frame for icons instead of aligning raw glyph bounds. Validate first and last rows, multiline content, missing accessories, and mixed symbol shapes.
 
+For recurring anatomy, keep a compact alignment ledger that names the container edge, icon frame, copy start, first baseline or top anchor, trailing-control edge, and optional secondary column. Encode it with a shared row/card layout or an explicit grid. A chain of unrelated spacers is not an alignment contract.
+
 ## Encode sizing and proportion rules
 
 Prefer:
@@ -78,6 +91,10 @@ Use whitespace and dividers before adding another plane. Do not nest identical s
 
 A floating surface must remain distinguishable over every background it can cover. Its fill, border, radius, shadow, backdrop, and host clipping must describe one geometry.
 
+Set a containment budget for recurring archetypes. Every card, fill, border, divider, badge, icon tile, and rounded rectangle must explain grouping, interaction, state, or elevation. Prefer one visible boundary per semantic group, then run a subtraction pass.
+
+Treat neutral informational icons as bare glyphs in stable frames by default. A separate tile, fill, or tint is earned by identity, brand, status, action affordance, selection, or required contrast—not by decoration.
+
 ## Define typography recipes
 
 A type scale lists available roles. Recipes specify how those roles combine in recurring compositions, such as:
@@ -88,7 +105,7 @@ A type scale lists available roles. Recipes specify how those roles combine in r
 - card title, supporting copy, and ignorable metadata;
 - dense status or timestamp line.
 
-State the type role, weight, contrast role, and maximum number of levels for each recipe. Primary labels should not become captions simply because a column is narrow. Explanatory copy should not use a metadata style when comprehension depends on it.
+State the type role, weight, semantic emphasis role, and maximum number of levels for each recipe. Use a bounded ladder—normally primary, secondary, and tertiary neutral emphasis, plus disabled and semantic status. Primary labels should not become captions simply because a column is narrow. Required explanatory copy should remain comfortably readable at secondary emphasis and should not use a tertiary metadata or disabled style when comprehension depends on it. Do not create hierarchy with raw feature-local opacity.
 
 ## Turn rules into implementation
 

@@ -9,12 +9,13 @@ Use reviewed product evidence before invention. Preserve platform-native behavio
 
 ## Core contract
 
-- Treat an approved implementation plan as authorization to continue through design, implementation, rendering, self-review, and one polish pass. Do not add a user-approval pause merely because no mockup exists.
+- Treat an approved implementation plan as authorization to continue through design, implementation, rendering, self-review, and iterative polish. Do not add a user-approval pause merely because no mockup exists.
 - When a project has no visual language or design system, bootstrap a minimum viable design contract and implement the first screen in the same workflow. Do not require pre-existing `design.md` files or delay the first interface for a speculative comprehensive system.
 - Treat a feature plan as product and implementation direction, not blanket approval of visual treatment. Require visual evidence for typography, icon, density, alignment, surface, and control-placement decisions.
 - Prefer, in order: an approved project pattern, a comparable mature production pattern, platform conventions for behavior, then a new composition.
 - Treat existing code as evidence, not automatically as an approved design. Prefer documented patterns and golden screens.
 - Require a composition grammar as well as a token inventory. A valid font, color, or spacing value can still produce a weak hierarchy when its relationship, alignment, proportion, or surface plane is wrong.
+- Begin visual design from ranked information and task priority rather than styling the source view tree. Require a bounded text-emphasis system, justified containment, deliberate icon treatment, and explicit alignment anchors.
 - Use native interaction semantics and accessibility while applying project-specific presentation. Follow: **native behavior, project presentation**.
 - Classify requested visual changes by ownership before implementation. Inspect consumers before changing foundations or shared components; prefer named semantic variants over repeated local overrides.
 - Report reusable or conflicting design-system gaps while continuing with a reversible provisional choice. Pause only for decisions that materially change product behavior, information architecture, or scope.
@@ -39,6 +40,8 @@ Read repository instructions first. Discover the project's visual language, desi
 Read [project-contract.md](references/project-contract.md) when discovering a project or when its design context is incomplete. Do not require exact filenames.
 
 Read [composition-foundations.md](references/composition-foundations.md) when establishing a visual language or when recurring problems involve spacing, alignment, sizing, proportion, surface hierarchy, or typography hierarchy.
+
+Read [visual-hierarchy-and-restraint.md](references/visual-hierarchy-and-restraint.md) for every new or materially redesigned interface. Use it to study references, rank content, control text emphasis, prevent container clutter, decide icon treatment, and prove repeated alignment.
 
 Read the relevant platform guidance:
 
@@ -79,7 +82,9 @@ Identify:
 
 - screen archetype and user goal;
 - scan order and primary action;
-- typography, icon, color, density, alignment, surface, and control-placement rules;
+- ranked information and what remains visible, combines, moves, or becomes progressive disclosure;
+- typography and text-emphasis relationships, icon integration, density, alignment grid, surface strategy, and control-placement rules;
+- what the reference deliberately leaves unbounded, unaccented, or absent;
 - reusable components and their states;
 - nearby inconsistencies that should not be copied.
 
@@ -91,17 +96,20 @@ Inspect all critical recurring dimensions before reporting gaps. Group related g
 
 If no strong internal precedent exists, read [production-reference-research.md](references/production-reference-research.md). Search narrowly for the same design problem in mature production applications. Inspect actual screenshots or live UI and synthesize the reviewed pattern instead of copying an app wholesale.
 
-Prefer two or three comparable references when practical. Extract the shared decisions, explain platform adaptation, and record which reference influenced what.
+Prefer two or three comparable references when practical. Extract the shared decisions and omissions, explain platform adaptation, and record which reference influenced each hierarchy, grouping, surface, icon, alignment, or interaction choice.
 
 ### 6. Perform a private design preflight
 
 Before coding, resolve:
 
 - intended outcome and dominant scan path;
+- ranked content map: orienting, actionable, required explanatory, supporting, and optional metadata;
 - screen archetype and content hierarchy;
 - primary, secondary, and destructive actions;
 - component reuse versus new component needs;
-- spacing relationships, alignment anchors, content-width and sizing rules, surface planes, and typography recipes;
+- text-emphasis ladder and recurring label/value or title/supporting-copy recipes;
+- spacing relationships, an alignment ledger for repeated anatomy, content-width and sizing rules, and surface planes;
+- containment budget, subtraction opportunities, and justification for every icon tile or nested surface;
 - change ownership: foundation, shared component, contextual semantic variant, or local composition;
 - important normal, empty, loading, error, disabled, selected, and overflow states;
 - responsive or resizable behavior;
@@ -137,7 +145,17 @@ Read [self-critique-protocol.md](references/self-critique-protocol.md) and [visu
 
 Perform a private failure-seeking critique of the first render. Judge the component in isolation and within its surrounding application environment. Identify what looks accidental, generic, visually unresolved, poorly separated, misaligned, illegible, inconsistent, or unshippable. Fix every production-readiness blocker and major issue, then re-render and perform a confirmation pass.
 
-Compare the result with the selected internal and production references. Compare relationships—not merely token names or individual measurements—including proximity, baseline and edge alignment, proportions, surface nesting, typography roles, and environmental contrast. Complete at least one autonomous polish pass; continue beyond one when the confirmation render still exposes a material defect.
+Compare the result with the selected internal and production references. Compare relationships—not merely token names or individual measurements—including scan order, text-emphasis contrast, proximity, baseline and edge alignment, proportions, boundary count, surface nesting, icon integration, and environmental contrast.
+
+Review the candidate at reduced scale and, when tooling permits, in grayscale. Trace the declared alignment anchors and run a subtraction pass that challenges every border, fill, icon tile, badge, label, and persistent action.
+
+For a new or materially redesigned interface, run a convergence loop with at least:
+
+1. a structural pass for information priority, grouping, containment, and subtraction;
+2. a visual pass for text emphasis, alignment, proportion, icon integration, and optical polish;
+3. a confirmation render in the integrated context.
+
+Continue iterating whenever a reference-backed change would materially improve clarity, restraint, cohesion, or platform fit. Stop when no blocker or major issue remains and the next change would be minor, subjective, or outside scope. A small, tightly scoped visual edit may use one critique-and-confirmation cycle.
 
 Do not claim visual verification from a successful build alone. If rendering is blocked, report the exact limitation and complete all other safe checks.
 

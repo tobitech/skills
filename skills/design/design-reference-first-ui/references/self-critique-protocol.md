@@ -2,6 +2,18 @@
 
 Use this protocol to judge whether a rendered interface is genuinely production-ready rather than merely implemented.
 
+## Contents
+
+- [Critique stance](#critique-stance)
+- [Required visual contexts](#required-visual-contexts)
+- [Critique and convergence sequence](#critique-and-convergence-sequence)
+- [Hierarchy, restraint, and alignment review](#hierarchy-restraint-and-alignment-review)
+- [Environmental fit](#environmental-fit)
+- [Composition relationship review](#composition-relationship-review)
+- [Surface, boundary, and elevation review](#surface-boundary-and-elevation-review)
+- [Production-readiness blockers](#production-readiness-blockers)
+- [Fresh-eyes review](#fresh-eyes-review)
+
 ## Critique stance
 
 Review adversarially. Do not ask only “Does this look good?” Ask:
@@ -26,7 +38,7 @@ An isolated component can look polished while failing inside the application. Do
 
 Inspect light and dark appearance, relevant widths or size classes, and the most demanding content/state combinations when they materially affect the result.
 
-## Critique sequence
+## Critique and convergence sequence
 
 1. Render the first complete candidate.
 2. Record a private critique of three to seven concrete observations.
@@ -34,12 +46,36 @@ Inspect light and dark appearance, relevant widths or size classes, and the most
    - **blocker** — visibly unfinished, confusing, inaccessible, or inconsistent enough that it should not ship;
    - **major** — materially weakens hierarchy, cohesion, legibility, or interaction quality;
    - **minor** — optical polish that improves refinement without changing comprehension.
-4. Fix every blocker and major issue within scope.
-5. Re-render the integrated context.
-6. Confirm that the fixes work together and did not create new defects.
-7. Repeat when a blocker or major issue remains.
+4. Run a **structural pass**: simplify the content model, grouping, disclosure, containment, and action placement; remove redundant surfaces and information.
+5. Run a **visual pass**: correct text emphasis, spacing, density, icon treatment, alignment anchors, geometry, and environmental separation.
+6. Re-render the integrated context as a **confirmation render**.
+7. Compare it back to the project language and the extracted production-reference patterns.
+8. Repeat while a reference-backed material improvement remains visible, even when the implementation technically works.
+
+Stop only when:
+
+- no blocker or major issue remains;
+- the scan order, hierarchy, restraint, and alignment survive integrated review;
+- the latest corrections work together and introduced no new defect;
+- the next change would be minor, subjective, or outside the requested scope.
 
 Do not expose the private critique unless it helps explain a design gap or unresolved limitation. Report material corrections concisely in the final handoff.
+
+## Hierarchy, restraint, and alignment review
+
+Judge these relationships explicitly rather than relying on a general impression:
+
+- Write the intended scan order, then verify it at reduced scale.
+- View the render in grayscale or mentally remove accent color. Primary, secondary, and tertiary importance must remain understandable.
+- Confirm that required explanatory text is secondary and comfortably readable, not styled like optional metadata or disabled content.
+- Count visible text-emphasis levels. More than three neutral levels, excluding disabled and semantic status, needs a clear reason.
+- Count cards, fills, borders, dividers, badges, icon tiles, and rounded rectangles. Every visible boundary must explain grouping, interaction, state, or elevation.
+- Remove one decorative treatment at a time and keep it removed when hierarchy remains clear.
+- Treat a bare glyph in a stable frame as the default informational icon. Require a semantic reason for a tile, tint, or nested icon surface.
+- Trace the leading container edge, icon frame, copy start, first baseline or top anchor, and trailing control edge across repeated rows or cards.
+- Verify that controls align to the declared grid rather than to an arbitrary visual midpoint produced by spacer chains.
+
+If the interface looks busy, do not begin by adjusting random spacing. First reduce competing emphasis, visible boundaries, duplicated labels, and unnecessary controls; then re-evaluate spacing.
 
 ## Environmental fit
 
@@ -89,10 +125,16 @@ Treat these as failures until resolved:
 - hierarchy, text contrast, or explanatory copy is not comfortably legible;
 - a framework default visibly conflicts with the product language;
 - sibling alignment, padding, typography, icon treatment, or surface treatment is inconsistent;
+- required prose is rendered with tertiary, disabled, or otherwise faint emphasis;
+- nearly every text block uses the same dark emphasis, flattening the information hierarchy;
+- cards, borders, icon tiles, badges, or nested surfaces lack a semantic containment reason;
+- repeated rows or cards do not share explicit copy and trailing-control anchors;
+- production references were collected without extracting their hierarchy, restraint, alignment, and omission patterns;
 - intended interactive states are absent, ambiguous, or visually broken;
 - shadows, outlines, focus rings, or content are clipped;
 - empty, loading, error, disabled, overflow, or long-content states collapse the layout;
 - the component looks decorative or heavy relative to its importance;
+- the candidate was not re-rendered after material critique corrections;
 - the result relies on rationale to excuse a defect visible in the render.
 
 ## Fresh-eyes review

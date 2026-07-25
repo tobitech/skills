@@ -13,10 +13,12 @@ Design, implement, and critically review polished product interfaces across iOS,
 It includes:
 
 - just-in-time design-system bootstrapping for fresh projects;
-- production-reference research and decision-level source mapping;
+- production-reference research, omission study, and decision-level source mapping;
+- semantic typography and color-emphasis hierarchy;
+- containment restraint, icon integration, and explicit alignment grids;
 - foundation, shared-component, variant, and local-composition ownership rules;
 - preview-first implementation and integrated visual verification;
-- failure-seeking self-critique and autonomous polish passes;
+- failure-seeking self-critique and iterative design convergence;
 - non-blocking design-gap detection and closure.
 
 [Browse the skill](./skills/design/design-reference-first-ui/)
