@@ -1,6 +1,6 @@
 # Browser Audit
 
-Use this procedure for authenticated, streamed, or non-downloadable tutorial videos.
+Use this procedure for authenticated, streamed, or non-downloadable technical videos.
 
 ## Establish the player
 
@@ -12,7 +12,7 @@ Use this procedure for authenticated, streamed, or non-downloadable tutorial vid
 6. Control play, pause, seek, and speed only through visible player controls or supported browser interaction APIs.
 7. Record the initial telemetry with `manifest_tool.py add-observation` before capture begins.
 
-For YouTube and similar hosts, first clear consent, ad, age, sign-in, or rate-limit states through normal visible controls. Do not treat an ad duration, placeholder thumbnail, stale frame, or a seek that the player ignored as tutorial telemetry. If the requested host remains unreliable, follow the skill's identical official-source fallback rule and disclose it.
+For YouTube and similar hosts, first clear consent, ad, age, sign-in, or rate-limit states through normal visible controls. Do not treat an ad duration, placeholder thumbnail, stale frame, or a seek that the player ignored as technical-session telemetry. If the requested host remains unreliable, follow the skill's identical official-source fallback rule and disclose it.
 
 Fail browser verification when no real player telemetry is available, screenshots are blank or protected, or playback cannot be observed progressing. Continue with transcript-only notes only if the user accepts an `unverified` result.
 
@@ -25,7 +25,7 @@ For each batch:
 1. Confirm the observed player time.
 2. Record a telemetry observation, including playback state, duration, readiness, and resolution.
 3. Capture the video region rather than the whole page when practical.
-4. Save screenshot bytes under the tutorial’s `assets/` directory.
+4. Save screenshot bytes under the technical note’s `assets/` directory.
 5. After a seek, allow roughly 1–2 seconds for slide builds, syntax highlighting, plots, and terminal output to finish rendering; media readiness alone is insufficient.
 6. Read back `currentTime` after the seek and describe the rendered frame before deciding whether to retain it. Reject a stale frame or a timestamp outside the intended tolerance.
 7. Add retained frames to the manifest immediately.

@@ -1,6 +1,6 @@
 # Note Format
 
-Keep Markdown as the canonical editable content source. Generate matching title-named HTML, PDF, and EPUB editions after the note is complete. The reader-facing note contains the tutorial content; capture provenance, telemetry, and verification details belong in `watch-manifest.json` and `final-review.md`.
+Keep Markdown as the canonical editable content source. Generate matching title-named HTML, PDF, and EPUB editions after the note is complete. The reader-facing note contains the technical content; capture provenance, telemetry, and verification details belong in `watch-manifest.json` and `final-review.md`.
 
 ## Required reader-facing order
 
@@ -21,7 +21,7 @@ Do not put YAML frontmatter, source metadata, a chapter-marker table, a verifica
 
 ![Title card at 00:00:05](assets/embedded/publication-0005.png)
 
-*00:00:05 - Title card identifies the tutorial and presenter.*
+*00:00:05 - Title card identifies the technical session and presenter.*
 
 **00:00:07 - 00:00:37**
 
@@ -37,7 +37,7 @@ Copy source-provided section numbers, titles, capitalization, punctuation, and t
 - Keep screenshots in chronological order within the chapter.
 - Render every screenshot as its own standalone Markdown image and caption.
 - Never place screenshots in a Markdown table, gallery, column layout, or side-by-side arrangement.
-- A single source screenshot may itself contain multiple panels when that is what the tutorial showed.
+- A single source screenshot may itself contain multiple panels when that is what the technical session showed.
 - Use descriptive alt text and include the exact screenshot timestamp in the alt text or caption.
 - Keep the uncropped audit frame separately; crop publication images only when every instructional element remains visible.
 

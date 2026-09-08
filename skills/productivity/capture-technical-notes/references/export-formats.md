@@ -18,7 +18,7 @@ Markdown remains the canonical editable content source. The title-named HTML is 
 ## Shared content and asset contract
 
 - The HTML article must preserve the complete Markdown chapter order, transcript wording, timestamp blocks, headings, code, captions, and reference links.
-- Keep publication images under the tutorial directory and use tutorial-relative paths.
+- Keep publication images under the technical-notes directory and use technical-note-relative paths.
 - Render every screenshot as a separate semantic `figure`; never create screenshot tables, galleries, or side-by-side layouts.
 - Give images descriptive alt text plus intrinsic `width` and `height` so lazy loading does not shift chapter anchors.
 - Do not make any edition depend on remote image URLs. Package every local instructional asset into the EPUB and render it into the PDF.
@@ -93,4 +93,4 @@ EPUB is the portable e-book deliverable for Kindle workflows such as Send to Kin
 
 ## Bind exports to the review
 
-After all three editions pass, write the HTML, PDF, and EPUB SHA-256 entries to `final-review-exports.sha256` using tutorial-relative filenames in stable lexical order. Verify every entry from the tutorial directory. Any Markdown, publication-asset, or HTML content change requires all affected editions to be regenerated and rechecked before the second-pass review can pass.
+After all three editions pass, write the HTML, PDF, and EPUB SHA-256 entries to `final-review-exports.sha256` using technical-note-relative filenames in stable lexical order. Verify every entry from the technical-notes directory. Any Markdown, publication-asset, or HTML content change requires all affected editions to be regenerated and rechecked before the second-pass review can pass.

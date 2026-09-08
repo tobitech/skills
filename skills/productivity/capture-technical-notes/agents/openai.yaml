@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capture Technical Notes"
+  short_description: "Create technical notes in Markdown, HTML, PDF, EPUB"
+  default_prompt: "Use $capture-technical-notes to turn this technical video into an auditable note with transcript-aligned visuals and matching Markdown, HTML, PDF, and EPUB editions."

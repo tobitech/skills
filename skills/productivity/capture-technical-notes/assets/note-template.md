@@ -1,4 +1,4 @@
-# <Tutorial title>
+# <Technical note title>
 
 ## 1. <First section title, normally Introduction> - 00:00:00-00:00:00
 

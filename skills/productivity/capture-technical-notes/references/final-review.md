@@ -33,8 +33,8 @@ Validate the EPUB archive, package manifest, navigation document, and reading-or
 Only after all rows and global checks pass:
 
 1. Compute `shasum -a 256 "<resource-title>.md"` and `shasum -a 256 watch-manifest.json`. Record both hashes in `final-review.md`, not inside the Markdown note; embedding a file's own hash in that file would be self-referential.
-2. Extract every local asset embedded by the Markdown, compute its SHA-256, and write one entry per file to `final-review-assets.sha256` using tutorial-relative paths in stable lexical order.
-3. Verify the asset checksum file from the tutorial directory with `shasum -a 256 -c final-review-assets.sha256` and record the number of passing assets in `final-review.md`.
+2. Extract every local asset embedded by the Markdown, compute its SHA-256, and write one entry per file to `final-review-assets.sha256` using technical-note-relative paths in stable lexical order.
+3. Verify the asset checksum file from the technical-notes directory with `shasum -a 256 -c final-review-assets.sha256` and record the number of passing assets in `final-review.md`.
 4. Write the title-named HTML, PDF, and EPUB hashes to `final-review-exports.sha256` in stable lexical order, verify all three entries, and record their browser/rendering/package checks in `final-review.md`.
 
 If the current note hash, manifest hash, embedded-asset checksum, or HTML/PDF/EPUB checksum differs later, treat the review as stale, regenerate affected exports, and rerun the review completely.

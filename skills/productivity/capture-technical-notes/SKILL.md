@@ -1,9 +1,9 @@
 ---
-name: capture-tutorial-notes
-description: Turn tutorial videos into title-named Markdown, HTML, PDF, and EPUB notes with verbatim source transcripts, exact supplied section titles, inline instructional visuals, readable syntax-highlighted code, and a mandatory second-pass completeness review. Use when Codex is asked to watch, capture, summarize, document, or take notes from a YouTube video, an authenticated course player, a non-downloadable tutorial site, or a local video, especially when the user requires auditable transcript-and-visual evidence or polished web, print, or Kindle-friendly output.
+name: capture-technical-notes
+description: Turn technical videos into title-named Markdown, HTML, PDF, and EPUB notes with verbatim source transcripts, exact supplied section titles, inline instructional visuals, readable syntax-highlighted code, and a mandatory second-pass completeness review. Use when Codex is asked to watch, capture, summarize, document, or take notes from a YouTube video, an authenticated course player, a non-downloadable technical site, or a local video, especially when the user requires auditable transcript-and-visual evidence or polished web, print, or Kindle-friendly output.
 ---
 
-# Capture Tutorial Notes
+# Capture Technical Notes
 
 Create a canonical Markdown note, a polished HTML presentation edition, matching PDF and EPUB editions generated from the HTML structure, and an evidence manifest. Treat “verified” as verified transcript-and-visual coverage, never as proof of human-like attention.
 
@@ -13,7 +13,7 @@ Create a canonical Markdown note, a polished HTML presentation edition, matching
 2. Use **local mode** when the user supplies a video file.
 3. Use **download mode** only when the site permits it and `yt-dlp` can access the media. Run `python3 <skill-dir>/scripts/manifest_tool.py doctor` first. Never bypass DRM, paywalls, access controls, or site restrictions.
 
-When the requested host is blocked by ads, rate limits, or unreliable seeking, an official creator-hosted copy may be used only after establishing that it is the same tutorial from creator identity, title, duration, chapter sequence, and visible content. Record both the requested URL and capture URL, preserve the requested chapter markers, and disclose the fallback in `final-review.md`. If identity cannot be established, do not silently substitute another upload.
+When the requested host is blocked by ads, rate limits, or unreliable seeking, an official creator-hosted copy may be used only after establishing that it is the same technical session from creator identity, title, duration, chapter sequence, and visible content. Record both the requested URL and capture URL, preserve the requested chapter markers, and disclose the fallback in `final-review.md`. If identity cannot be established, do not silently substitute another upload.
 
 Use the in-app Browser skill for browser mode. If that skill is unavailable, mark browser verification blocked; do not silently substitute Chrome or another browser unless the user approves it. Use a purpose-built connector to publish into Notion when available; otherwise keep Markdown as the canonical artifact and edit Notion through the browser only when the user explicitly requests it.
 
@@ -23,7 +23,7 @@ Use the resource's exact publisher-visible title as the note title and artifact 
 
 Store every capture under `~/captured-notes/` in the user's home directory. Create `~/captured-notes/` when it does not exist. Do not interpret “user root” as the filesystem root `/`, and do not save the canonical result in a thread-specific visualization folder unless the user explicitly requests another destination. If the environment restricts writes to the home directory, request the required filesystem approval instead of falling back to another location silently.
 
-Create one directory per tutorial. `<resource-title>` below means the exact resource title, subject only to the filesystem exception above:
+Create one directory per technical note. `<resource-title>` below means the exact resource title, subject only to the filesystem exception above:
 
 ```text
 ~/captured-notes/<resource-title>/
@@ -40,11 +40,11 @@ Create one directory per tutorial. `<resource-title>` below means the exact reso
 
 If a directory with the same title already represents the same source, update it without deleting unrelated files. If a different source has the same title, append a stable source identifier to the directory name only; keep the four note artifact filenames title-based.
 
-Resolve `<skill-dir>` to this skill's directory. Copy [assets/note-template.md](assets/note-template.md) to `<resource-title>.md`. Set `<tutorial-dir>` to `~/captured-notes/<resource-title>/` for all later commands. Initialize the manifest:
+Resolve `<skill-dir>` to this skill's directory. Copy [assets/note-template.md](assets/note-template.md) to `<resource-title>.md`. Set `<technical-notes-dir>` to `~/captured-notes/<resource-title>/` for all later commands. Initialize the manifest:
 
 ```bash
 python3 <skill-dir>/scripts/manifest_tool.py init \
-  --manifest <tutorial-dir>/watch-manifest.json \
+  --manifest <technical-notes-dir>/watch-manifest.json \
   --title "<title>" \
   --source "<URL-or-local-path>" \
   --mode browser \
@@ -97,7 +97,7 @@ Record raw player telemetry at the beginning, during each playback batch, and at
 
 ```bash
 python3 <skill-dir>/scripts/manifest_tool.py add-observation \
-  --manifest <tutorial-dir>/watch-manifest.json \
+  --manifest <technical-notes-dir>/watch-manifest.json \
   --timestamp <currentTime> \
   --state playing \
   --duration <duration> \
@@ -130,9 +130,9 @@ Add each retained checkpoint:
 
 ```bash
 python3 <skill-dir>/scripts/manifest_tool.py add-checkpoint \
-  --manifest <tutorial-dir>/watch-manifest.json \
+  --manifest <technical-notes-dir>/watch-manifest.json \
   --timestamp <seconds> \
-  --frame <tutorial-dir>/assets/<frame>.png \
+  --frame <technical-notes-dir>/assets/<frame>.png \
   --kind slide \
   --description "<visual-only facts>" \
   --transcript-section "<section title>" \
@@ -145,14 +145,14 @@ Record each dedicated section-end probe with `--role boundary`, then persist the
 
 ```bash
 python3 <skill-dir>/scripts/manifest_tool.py add-section-completion \
-  --manifest <tutorial-dir>/watch-manifest.json \
+  --manifest <technical-notes-dir>/watch-manifest.json \
   --section "<number and exact title>" \
   --section-end <seconds> \
   --boundary-timestamp <seconds> \
-  --boundary-frame <tutorial-dir>/assets/<boundary>.png \
+  --boundary-frame <technical-notes-dir>/assets/<boundary>.png \
   --knowledge-union "<all visible knowledge elements>" \
-  --publication-frame <tutorial-dir>/assets/<publication-1>.png \
-  --publication-frame <tutorial-dir>/assets/<publication-2>.png \
+  --publication-frame <technical-notes-dir>/assets/<publication-1>.png \
+  --publication-frame <technical-notes-dir>/assets/<publication-2>.png \
   --result pass \
   --notes "<how the publication union covers the boundary and slide family>"
 ```
@@ -176,7 +176,7 @@ Follow [references/note-format.md](references/note-format.md).
 
 After the Markdown note is complete, read [references/export-formats.md](references/export-formats.md). Generate `<resource-title>.html` as the shared presentation source, then generate `<resource-title>.pdf` and `<resource-title>.epub` from its semantic article and chapter structure. Markdown remains the canonical editable content source; HTML is the canonical presentation/export source. All editions must carry the exact resource title in their document metadata and must contain every local instructional image, diagram, slide, screenshot, code block, reference, and chapter present in the Markdown note.
 
-The HTML article must begin with the exact title and then the first chapter, contain one semantic section per chapter, render screenshots as separate full-width figures, and contain no screenshot tables or side-by-side galleries. Use tutorial-relative assets, responsive image sizing with intrinsic dimensions, readable syntax-highlighted code with selectable source text, accessible navigation outside the article, and print styles suitable for the PDF. Verify it at ordinary desktop and phone widths before exporting.
+The HTML article must begin with the exact title and then the first chapter, contain one semantic section per chapter, render screenshots as separate full-width figures, and contain no screenshot tables or side-by-side galleries. Use note-relative assets, responsive image sizing with intrinsic dimensions, readable syntax-highlighted code with selectable source text, accessible navigation outside the article, and print styles suitable for the PDF. Verify it at ordinary desktop and phone widths before exporting.
 
 Do not satisfy this requirement by changing file extensions. Regenerate the HTML, PDF, and EPUB after any content or embedded-asset change; regenerate affected portable editions after an HTML presentation-style change. If a required converter is unavailable, install or enable it only with the user's authorization when required; otherwise report the capture as incomplete rather than silently omitting an edition.
 
@@ -186,9 +186,9 @@ After assembling the note and completing checkpoint coverage, select timestamps 
 
 ```bash
 python3 <skill-dir>/scripts/manifest_tool.py add-spot-check \
-  --manifest <tutorial-dir>/watch-manifest.json \
+  --manifest <technical-notes-dir>/watch-manifest.json \
   --timestamp <seconds> \
-  --frame <tutorial-dir>/assets/<spot-check>.png \
+  --frame <technical-notes-dir>/assets/<spot-check>.png \
   --result pass \
   --notes "<what was independently confirmed>"
 ```
@@ -199,7 +199,7 @@ Finalize using the actual counts:
 
 ```bash
 python3 <skill-dir>/scripts/manifest_tool.py finalize \
-  --manifest <tutorial-dir>/watch-manifest.json \
+  --manifest <technical-notes-dir>/watch-manifest.json \
   --transcript-total <count> \
   --transcript-mapped <count> \
   --visual-events-total <count> \
@@ -209,12 +209,12 @@ python3 <skill-dir>/scripts/manifest_tool.py finalize \
   --min-playback-observations 3
 
 python3 <skill-dir>/scripts/manifest_tool.py validate \
-  --manifest <tutorial-dir>/watch-manifest.json
+  --manifest <technical-notes-dir>/watch-manifest.json
 ```
 
 ## Run the mandatory second-pass review
 
-Only after spot checks are recorded, the manifest is finalized and validated, the title-named Markdown is in its intended final form, and its HTML, PDF, and EPUB editions have been exported, read [references/final-review.md](references/final-review.md). Copy [assets/final-review-template.md](assets/final-review-template.md) to `<tutorial-dir>/final-review.md` and review the finished `<resource-title>.md`, `<resource-title>.html`, `<resource-title>.pdf`, and `<resource-title>.epub` against the raw evidence from scratch.
+Only after spot checks are recorded, the manifest is finalized and validated, the title-named Markdown is in its intended final form, and its HTML, PDF, and EPUB editions have been exported, read [references/final-review.md](references/final-review.md). Copy [assets/final-review-template.md](assets/final-review-template.md) to `<technical-notes-dir>/final-review.md` and review the finished `<resource-title>.md`, `<resource-title>.html`, `<resource-title>.pdf`, and `<resource-title>.epub` against the raw evidence from scratch.
 
 - Review every transcript section; do not sample.
 - Compare each embedded visual with its section-boundary capture and the full slide family.
@@ -222,7 +222,7 @@ Only after spot checks are recorded, the manifest is finalized and validated, th
 - Prefer a fresh subagent when available and safe. Give it the skill, assembled note, finalized manifest, and raw evidence, but not prior publication decisions or comparison conclusions. Otherwise perform a fresh self-review using the same matrix.
 - Resolve every failure, then restart the second pass from section 1. Do not merely recheck the corrected row.
 - Record the SHA-256 of the exact reviewed title-named Markdown and finalized manifest in `final-review.md`; the note itself should link to that artifact instead of trying to contain its own hash.
-- Write `final-review-assets.sha256` with one SHA-256 entry for every local image or other asset embedded by the Markdown note, using paths relative to the tutorial directory, and verify every entry before passing.
+- Write `final-review-assets.sha256` with one SHA-256 entry for every local image or other asset embedded by the Markdown note, using paths relative to the technical-notes directory, and verify every entry before passing.
 - Write `final-review-exports.sha256` with entries for the title-named HTML, PDF, and EPUB in stable lexical order. Verify all three entries, inspect the HTML at desktop and phone widths, visually review every PDF page, and verify that the EPUB package contains every referenced local asset and a readable chapter spine.
 - Any subsequent change to the Markdown note, an embedded publication asset, code block, link, manifest, HTML, PDF, or EPUB invalidates the review and requires the affected exports and the complete second pass to be regenerated.
 - Do not report `verified` unless every section row and every global check passes and the recorded note hash still matches.

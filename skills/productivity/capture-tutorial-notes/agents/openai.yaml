@@ -1,4 +1,0 @@
-interface:
-  display_name: "Capture Tutorial Notes"
-  short_description: "Create tutorial notes in Markdown, HTML, PDF, EPUB"
-  default_prompt: "Use $capture-tutorial-notes to turn this tutorial video into an auditable note with transcript-aligned visuals and matching Markdown, HTML, PDF, and EPUB editions."
